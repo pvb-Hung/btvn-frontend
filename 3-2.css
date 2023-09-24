@@ -1,0 +1,50 @@
+body{
+    background-color: aquamarine;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: aliceblue;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    
+}
+li{
+    margin-left: 10px;
+}
+
+.menu{
+    display: flex;
+}
+
+.leftmenu{
+    width: 50%;
+    margin: 10px;
+}
+
+.rightmenu{
+    width: 50%;
+    margin: 10px;
+}
+
+p{
+    text-align: left;
+    padding-left: 10px;
+}
+
+p:hover{
+    color: blue;
+}
+
+.footer{
+    height: 50px;
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.645);
+    text-align: center;
+    padding-top: 15px;
+}

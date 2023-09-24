@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.css">
+    <style>
+        /* CSS cho Header */
+        .header {
+            background-color: #cb2828eb;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-box-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .search-box {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        
+
+        .nav-icons {
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            padding-right: 60px;
+        }
+
+        .nav-right a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-left: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .menu li {
+            display: inline-block;
+            margin-right: 50px; /* Khoảng cách giữa các mục menu */
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #f8f4f4;
+        }
+
+        
+        .menu .fa {
+            margin-right: 5px;
+        }
+
+
+        /*phan body*/
+        .body{
+            margin-left: 10%;
+            margin-right: 10%;
+
+        }
+        .imgFPT1{
+            height: 300px;
+            background-image: url('img/FPT-1.PNG');
+            background-size: cover;
+        }
+
+        .imgFPT2{
+            height: 300px;
+            background-image: url('img/FPT-2.PNG');
+            background-size: cover;
+        }
+
+        .custom-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+
+        .custom-menu-item {
+            border: 1px solid #ccc;
+            margin: 5px;
+            padding: 10px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        /* Biểu tượng Font Awesome */
+        .custom-menu-item .fa {
+            margin-right: 5px;
+        }
+
+        .custom-menu-item:hover {
+            transform: scale(1.1); /* Phóng to khi hover */
+            background-color: #ddd; /* Màu nền khi hover */
+        }
+
+        /*phan card*/
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .card-description {
+            margin-top: 5px;
+            color: #666;
+        }
+
+        .card-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #e91e63;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-container">
+            <div class="search-box-container">
+                <input type="text" class="search-box" placeholder="Tìm kiếm...">
+                <a href="#"><i class="fas fa-search nav-icons"></i>
+                </a>
+            </div>
+            <div class="nav-right">
+                <a href="#">
+                    <i class="fas fa-credit-card nav-icons"></i>
+                    <span>Thanh toán</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-user nav-icons"></i>
+                    <span>Tài khoản</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-shopping-cart nav-icons"></i>
+                    <span>Giỏ hàng</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-info-circle nav-icons"></i>
+                    <span>Thông tin</span>
+                </a>
+            </div>
+        </div>
+        <hr>
+        <div class="header-menu">
+            <ul class="menu">
+                <li><a href="#"><i class="fas fa-mobile-alt"></i> Điện thoại</a></li>
+                <li><a href="#"><i class="fas fa-laptop"></i> Laptop</a></li>
+                <li><a href="#"><i class="fas fa-tablet-alt"></i> Máy tính bảng</a></li>
+                <li><a href="#"><i class="fab fa-apple"></i> Apple</a></li>
+                <li><a href="#"><i class="fas fa-desktop"></i> PC-Linh kiện</a></li>
+                <li><a href="#"><i class="fas fa-headphones"></i> Phụ kiện</a></li>
+                <li><a href="#"><i class="fas fa-mobile-alt"></i> Máy cũ giá rẻ</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="imgFPT1"></div>
+        <div class="imgFPT2"></div>
+        <ul class="custom-menu">
+            <li class="custom-menu-item"><i class="fas fa-mobile-alt"></i> Điện thoại</li>
+            <li class="custom-menu-item"><i class="fas fa-laptop"></i> Laptop</li>
+            <li class="custom-menu-item"><i class="fas fa-desktop"></i> PC</li>
+            <li class="custom-menu-item"><i class="fas fa-tablet-alt"></i> Máy tính bảng</li>
+            <li class="custom-menu-item"><i class="fas fa-cog"></i> Thiết bị thông minh</li>
+            <li class="custom-menu-item"><i class="fas fa-home"></i> Gia dụng</li>
+            <!-- Thêm các mục menu khác vào đây với các tên lớp khác nhau -->
+        </ul>
+        <div class="card-container">
+            <div class="card">
+                <img class="card-image" src="img/dt1.jpg" alt="Điện thoại">
+                <div class="card-title">Samsung Galaxy S21</div>
+                <div class="card-description">
+                    Samsung Galaxy S21 là một chiếc điện thoại thông minh hàng đầu với nhiều tính năng xuất sắc.
+                </div>
+                <div class="card-price">$999.99</div>
+            </div>
+            <div class="card">
+                <img class="card-image" src="img/dt2.jpg" alt="Điện thoại">
+                <div class="card-title">Samsung Galaxy S21</div>
+                <div class="card-description">
+                    Samsung Galaxy S21 là một chiếc điện thoại thông minh hàng đầu với nhiều tính năng xuất sắc.
+                </div>
+                <div class="card-price">$999.99</div>
+            </div>
+            <div class="card">
+                <img class="card-image" src="img/dt2.jpg" alt="Điện thoại">
+                <div class="card-title">Samsung Galaxy S21</div>
+                <div class="card-description">
+                    Samsung Galaxy S21 là một chiếc điện thoại thông minh hàng đầu với nhiều tính năng xuất sắc.
+                </div>
+                <div class="card-price">$999.99</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

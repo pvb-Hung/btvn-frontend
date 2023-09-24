@@ -1,0 +1,44 @@
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.item{
+    border: 1px solid  ;
+    margin: 5px;
+    padding: 10px 20px;
+}
+
+.imgPro{
+    height: 150px;
+    width: 100px;
+    background-image: url('img/image-removebg-preview-9.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.namePro{
+    color: rgb(179, 133, 19);
+    text-align: center;
+}
+
+.costPro{
+    color: rgb(195, 33, 33);
+}
+
+.namePro:hover{
+    color: rgb(5, 5, 2);
+    text-decoration: underline;
+}
+
+.costPro:hover{
+    color: rgb(5, 5, 2);
+    text-decoration: underline;
+}
+
+.item :hover{
+    border-color: brown;
+}
