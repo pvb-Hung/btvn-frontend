@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .header {
+            background-color: #faf2f2;
+            color: #0b0505;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 25px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #463030;
+        }
+
+        .menu-item {
+            margin-right: 20px;
+            font-size: 18px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .menu-item .fa {
+            margin-right: 5px;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+        /*body*/
+        .body {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        /*vẫn cần sửa*/
+        .banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 30px;
+        }
+
+        .banner-1,
+        .banner-3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 30%;
+            /* Điều chỉnh kích thước của banner-1 và banner-3 */
+        }
+
+        .img-container {
+            width: 100%;
+            height: 200px;
+            /* Điều chỉnh kích thước của ảnh */
+            background-size: cover;
+            background-position: center;
+            margin: 10px;
+        }
+
+
+        /* Áp dụng background image cho các .img-container */
+        .banner-1 .img-container:nth-child(1) {
+            background-image: url('img/phim1.jpg');
+        }
+
+        .banner-1 .img-container:nth-child(2) {
+            background-image: url('img/phim1.jpg');
+        }
+
+        .banner-3 .img-container:nth-child(1) {
+            background-image: url('img/phim1.jpg');
+        }
+
+        .banner-3 .img-container:nth-child(2) {
+            background-image: url('img/phim1.jpg');
+        }
+
+        .banner-2 {
+            width: 30%;
+            height: 360px;
+            background-size: cover;
+            background-position: center;
+            background-image: url('img/phim1.jpg');
+        }
+
+
+        /* CSS cho thẻ recent post */
+        .posts {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .recent-post-card {
+            width: 28%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+
+        .recent-post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .recent-post-card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .post-title {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .post-author {
+            color: #555;
+            margin: 0;
+        }
+
+
+        .post-date {
+            color: #777;
+            margin: 0;
+        }
+
+        .post-excerpt {
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+
+        .read-more {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .read-more:hover {
+            color: #0056b3;
+        }
+
+        .top {
+            display: flex;
+            flex-direction: row;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .top-2 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .top img {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .newsletter {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .newsletter h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .newsletter p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter input[type="email"] {
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .newsletter button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter button:hover {
+            background-color: #0056b3;
+        }
+
+
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-about,
+        .footer-contact {
+            flex: 1;
+            margin: 0 20px;
+        }
+
+        .footer h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .footer p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Định dạng danh sách cột */
+        .footer-lists {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .footer-list {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .footer-list h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .footer-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-list ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-list ul li a {
+            text-decoration: none;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .footer-list ul li a:hover {
+            color: #333;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+
+        /*Phan respon*/
+        @media all and (min-width: 678px) and (max-width: 991px) {
+            .menu {
+                display: none;
+            
+            }
+            /*body*/
+        .body {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        .recent-post-card {
+            width: 90%;
+        }
+
+        .footer-lists {
+            display: flex;
+            flex-direction: column;
+        }
+        }
+
+        @media all and (min-width: 320px) and (max-width: 767px) {
+            .menu {
+                display: none;
+            
+            }
+            /*body*/
+        .body {
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        .recent-post-card {
+            width: 90%;
+        }
+        .banner{
+            display: flex;
+            flex-direction: column;
+        }
+        .img-container {
+            width: 300%;
+        }
+        .banner-2{
+            width: 90%;
+        }
+        .top{
+            flex-direction: column;
+        }
+        .top-2{
+            flex-direction: column;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">
+            <div class="header-title">Zent's Blog</div>
+            <ul class="menu">
+                <li class="menu-item"><a href="#">Home</a></li>
+                <li class="menu-item"><a href="#">Politics</a></li>
+                <li class="menu-item"><a href="#">Tech</a></li>
+                <li class="menu-item"><a href="#">Entertainment</a></li>
+                <li class="menu-item"><a href="#">Travels</a></li>
+                <li class="search-icon"><i class="fas fa-search"></i></li>
+            </ul>
+        </div>
+
+        <div class="body">
+            <div class="banner">
+                <div class="banner-1">
+                    <div class="img-container"></div>
+                    <div class="img-container"></div>
+                </div>
+                <div class="banner-2">
+                </div>
+                <div class="banner-3">
+                    <div class="img-container"></div>
+                    <div class="img-container"></div>
+                </div>
+            </div>
+
+            <div class="posts">
+                <div class="recent-post-card">
+                    <img src="img/dt2.jpg" alt="Post Image">
+                    <div class="post-details">
+                        <h2 class="post-title">Tiêu đề bài viết</h2>
+                        <div class="post-meta">
+                            <p class="post-author">Tác giả</p>
+                            <p class="post-date">Ngày đăng: 20/09/2023</p>
+                        </div>
+                        <p class="post-excerpt">Mô tả ngắn về bài viết. Mô tả này có thể nằm ở đây.</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+
+                <div class="recent-post-card">
+                    <img src="img/dt2.jpg" alt="Post Image">
+                    <div class="post-details">
+                        <h2 class="post-title">Tiêu đề bài viết</h2>
+                        <div class="post-meta">
+                            <p class="post-author">Tác giả</p>
+                            <p class="post-date">Ngày đăng: 20/09/2023</p>
+                        </div>
+                        <p class="post-excerpt">Mô tả ngắn về bài viết. Mô tả này có thể nằm ở đây.</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+
+                <div class="recent-post-card">
+                    <img src="img/dt2.jpg" alt="Post Image">
+                    <div class="post-details">
+                        <h2 class="post-title">Tiêu đề bài viết</h2>
+                        <div class="post-meta">
+                            <p class="post-author">Tác giả</p>
+                            <p class="post-date">Ngày đăng: 20/09/2023</p>
+                        </div>
+                        <p class="post-excerpt">Mô tả ngắn về bài viết. Mô tả này có thể nằm ở đây.</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+
+                <div class="recent-post-card">
+                    <img src="img/dt2.jpg" alt="Post Image">
+                    <div class="post-details">
+                        <h2 class="post-title">Tiêu đề bài viết</h2>
+                        <div class="post-meta">
+                            <p class="post-author">Tác giả</p>
+                            <p class="post-date">Ngày đăng: 20/09/2023</p>
+                        </div>
+                        <p class="post-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+                            beatae fugit officiis sequi. Harum voluptatem reprehenderit excepturi iure commodi
+                            recusandae!</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+
+                <div class="recent-post-card">
+                    <img src="img/dt2.jpg" alt="Post Image">
+                    <div class="post-details">
+                        <h2 class="post-title">Tiêu đề bài viết</h2>
+                        <div class="post-meta">
+                            <p class="post-author">Tác giả</p>
+                            <p class="post-date">Ngày đăng: 20/09/2023</p>
+                        </div>
+                        <p class="post-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+                            beatae fugit officiis sequi. Harum voluptatem reprehenderit excepturi iure commodi
+                            recusandae!</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+
+                <div class="recent-post-card">
+                    <img src="img/dt2.jpg" alt="Post Image">
+                    <div class="post-details">
+                        <h2 class="post-title">Tiêu đề bài viết</h2>
+                        <div class="post-meta">
+                            <p class="post-author">Tác giả</p>
+                            <p class="post-date">Ngày đăng: 20/09/2023</p>
+                        </div>
+                        <p class="post-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+                            beatae fugit officiis sequi. Harum voluptatem reprehenderit excepturi iure commodi
+                            recusandae!</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+
+                <div class="recent-post-card">
+                    <img src="img/dt2.jpg" alt="Post Image">
+                    <div class="post-details">
+                        <h2 class="post-title">Tiêu đề bài viết</h2>
+                        <div class="post-meta">
+                            <p class="post-author">Tác giả</p>
+                            <p class="post-date">Ngày đăng: 20/09/2023</p>
+                        </div>
+                        <p class="post-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+                            beatae fugit officiis sequi. Harum voluptatem reprehenderit excepturi iure commodi
+                            recusandae!</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+
+                <div class="recent-post-card">
+                    <img src="img/dt2.jpg" alt="Post Image">
+                    <div class="post-details">
+                        <h2 class="post-title">Tiêu đề bài viết</h2>
+                        <div class="post-meta">
+                            <p class="post-author">Tác giả</p>
+                            <p class="post-date">Ngày đăng: 20/09/2023</p>
+                        </div>
+                        <p class="post-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+                            beatae fugit officiis sequi. Harum voluptatem reprehenderit excepturi iure commodi
+                            recusandae!</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+
+                <div class="recent-post-card">
+                    <img src="img/dt2.jpg" alt="Post Image">
+                    <div class="post-details">
+                        <h2 class="post-title">Tiêu đề bài viết</h2>
+                        <div class="post-meta">
+                            <p class="post-author">Tác giả</p>
+                            <p class="post-date">Ngày đăng: 20/09/2023</p>
+                        </div>
+                        <p class="post-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+                            beatae fugit officiis sequi. Harum voluptatem reprehenderit excepturi iure commodi
+                            recusandae!</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top">
+                <div class="top-3">
+                    <figure>
+                        <img src="img/btvn-1.PNG" alt="#">
+                    </figure>
+                    <div class="top-2">
+                        <figure>
+                            <img src="img/btvn-3.PNG" alt="#">
+                        </figure>
+                        <figure>
+                            <img src="img/btvn-3.PNG" alt="#">
+                        </figure>
+                    </div>
+                </div>
+                <figure>
+                    <img src="img/btvn-2.PNG" alt="#">
+                </figure>
+            </div>
+
+            <div class="newsletter">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest updates and news straight to your inbox.</p>
+                <form action="#" method="post">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum arcu id urna dictum, ut
+                        auctor neque eleifend.</p>
+                </div>
+                <div class="footer-lists">
+                    <div class="footer-list">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Mission and Vision</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-list">
+                        <h3>Traveler</h3>
+                        <ul>
+                            <li><a href="#">Destinations</a></li>
+                            <li><a href="#">Travel Tips</a></li>
+                            <li><a href="#">Travel Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact With Us</h3>
+                    <p>Email: Hung@email.com</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2023 Your Website Name. All rights reserved. By Zent Coding School
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
